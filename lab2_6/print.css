@@ -1,0 +1,24 @@
+.header, .send-form, .footer{
+    display: none;
+}
+.body{
+    font-size: 12pt;
+}
+.main{
+    display: unset;
+}
+.cards__item{
+    width: 54mm;
+}
+.cards__text{
+    width: 5cm;
+}
+a::after{
+    content: " (" attr(href) ")";    
+}
+img{
+    break-inside: avoid;
+}
+.concept{
+    break-before: page;
+}

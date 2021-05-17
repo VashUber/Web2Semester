@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>2лаб</title>
+</head>
+<body>
+	<div class="main-main">
+		<header>
+			<h2>Сизов Егор 201-322. CSS GRID</h2>	
+		</header>
+		<aside>
+			<ul>
+				<li>
+					<a href="#1">grid-контейнер, grid-элементы</a>
+				</li>
+				<li>
+					<a href="#2">линии, треки, ячейки, области</a>
+				</li>
+				<li>
+					<a href="#3">формирование явной и неявной структуры grid</a>
+				</li>
+				<li>
+					<a href="#4">управление размерами элементов</a>
+				</li>
+				<li>
+					<a href="#5">шаблон RAM</a>
+				</li>
+				<li>
+					<a href="#6">выравнивание элементов</a>
+				</li>
+				<li>
+					<a href="#7">порядок элементов</a>
+				</li>
+				<li>
+					<a href="#8">различные способы расположения элементов в сетке</a>
+				</li>
+				<li>
+					<a href="#9">многоколоночная форма регистрации</a>
+				</li>
+			</ul>
+		</aside>
+		<main>
+			<h2 id="1">grid-контейнер, grid-элементы</h2>
+			<h3>display: grid</h3>
+			<div class="main-box first">
+				<div class="box">1</div>
+				<div class="box">2</div>
+				<div class="box">3</div>
+				<div class="box">4</div>
+				<div class="box">5</div>
+				<div class="box">6</div>
+			</div>
+			<h3>display: inline-grid</h3>
+			<div class="main-box second">
+				<div class="box">1</div>
+				<div class="box">2</div>
+				<div class="box">3</div>
+				<div class="box">4</div>
+				<div class="box">5</div>
+				<div class="box">6</div>
+			</div>
+			<h2 id="2">линии, треки, ячейки, области</h2>
+			<div class="main-box fifth">
+				<div class="box">1</div>
+				<div class="box">2</div>
+				<div class="box">3</div>
+				<div class="box">4</div>
+			</div>
+			<h3>grid-template-columns: 1fr 2fr 3fr;</h3>
+			<h3>grid-template-rows: 1fr 3fr 1fr;</h3>
+			<h3>grid-gap: 10px;</h3>
+			<div class="main-box third">
+				<div class="box">1</div>
+				<div class="box">2</div>
+				<div class="box">3</div>
+				<div class="box">4</div>
+				<div class="box">5</div>
+				<div class="box">6</div>
+				<div class="box">7</div>
+				<div class="box">8</div>
+				<div class="box">9</div>
+			</div>
+			<h3>Области</h3>
+			<div class="main-box fourth">
+				<div class="box hd">header</div>
+				<div class="box sd">side</div>
+				<div class="box mn">main</div>
+				<div class="box ft">footer</div>
+			</div>
+			<h2 id="3">формирование явной и неявной структуры grid</h2>
+			<div class="main-box sixth">
+				<div class="box">1</div>
+				<div class="box">2</div>
+				<div class="box">3</div>
+				<div class="box">4</div>
+				<div class="box">5</div>
+				<div class="box">6</div>
+				<div class="box">7</div>
+				<div class="box">8</div>
+			</div>
+			<h3>grid-auto-columns при отсутствии явной сетки</h3>
+			<div class="main-box seventh">
+				<div class="box">1</div>
+				<div class="box">2</div>
+				<div class="box">3</div>
+				<div class="box">4</div>
+				<div class="box">5</div>
+			</div>
+			<h3>grid-auto-flow: column</h3>
+			<h3>grid-auto-columns: 1fr</h3>
+			<div class="main-box eighth">
+				<div class="box">1</div>
+				<div class="box">2</div>
+				<div class="box">3</div>
+				<div class="box">4</div>
+				<div class="box">5</div>
+			</div>
+			<h2 id="4">управление размерами элементов</h2>
+			<h3>auto-fill</h3>
+			<div class="main-box ninth">
+				<div class="box">1</div>
+				<div class="box">2</div>
+				<div class="box">3</div>
+			</div>
+			<h3>auto-fit</h3>
+			<div class="main-box tenth">
+				<div class="box">1</div>
+				<div class="box">2</div>
+				<div class="box">3</div>
+			</div>
+			<h3>явные размеры</h3>
+			<div class="main-box eleventh">
+				<div class="box">1</div>
+				<div class="box">2</div>
+				<div class="box">3</div>
+				<div class="box">4</div>
+			</div>
+			<h2 id="5">шаблон RAM</h2>
+			<div class="main-box twentieth">
+				<div class="box">1</div>
+				<div class="box">2</div>
+				<div class="box">3</div>
+				<div class="box">4</div>
+				<div class="box">5</div>
+				<div class="box">6</div>
+				<div class="box">7</div>
+			</div>
+			<h2 id="6">выравнивание элементов</h2>
+			<div class="main-box thirteenth">
+				<div class="box">1</div>
+				<div class="box">2</div>
+				<div class="box">3</div>
+				<div class="box">4</div>
+				<div class="box">5</div>
+				<div class="box">6</div>
+			</div>
+			<h2 id="7">порядок элементов</h2>
+			<h3>измененный</h3>
+			<div class="main-box fifth">
+				<div class="box">1</div>
+				<div class="box">2</div>
+				<div class="box">3</div>
+				<div class="box">4</div>
+			</div>
+			<h2 id="8">различные способы расположения элементов в сетке</h2>
+			<div class="photo_gallery">
+				<div class="item1 item">
+					<img src="img/4.jpg" alt="">
+				</div>
+				<div class="item2 item">
+					<img src="img/1.png" alt="">
+				</div>
+				<div class="item3 item">
+					<img src="img/3.jpg" alt="">
+				</div>
+				<div class="item4 item">
+					<img src="img/2.jpg" alt="">
+				</div>
+				<div class="item5 item">
+					<img src="img/5.png" alt="">
+				</div>
+			</div>
+			<h2 id="9">многоколоночная форма регистрации</h2>
+			<div class="form">
+			<form>
+				<div class="inputs">
+					<div class="form-item">
+						<label for="name">Имя</label>
+						<input type="text" name="name" id="name">
+					</div>
+					<div class="form-item">
+						<label for="surname">Фамилия</label>
+						<input type="text" name="surname" id="surname">
+					</div>
+					<div class="form-item">
+						<label for="document">Серия, номер</label>
+						<input type="text" name="document" id="document">
+					</div>
+					<div class="form-item">
+						<label for="city">Город</label>
+						<input type="text" name="city" id="city">
+					</div>
+					<div class="form-item">
+						<label for="street">Улица</label>
+						<input type="text" name="street" id="street">
+					</div>
+					<div class="form-item">
+						<label for="phone">Номер телефона</label>
+						<input type="tel" name="phone" id="phone">
+					</div>
+				</div>
+				<div class="bt">
+					<button type="submit">отправить</button>
+				</div>			
+			</form>
+			</div>
+		</main>
+		<footer>
+			<a href="https://github.com/VashUber/lab2_2">GitHub</a>
+		</footer>
+	</div>
+</body>
+</html>
