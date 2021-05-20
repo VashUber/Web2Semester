@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+svg{
+    width: 150px;
+    height: 200px;
+}
+
+.Close:hover{
+    stroke:  #cacaca;
+}
+
+.BurgerMenu:active{
+    stroke: red;
+}
+
+.lamp{
+    display: flex;
+}
+
+button{
+    width: 50px;
+    height: 20px;
+    margin-top: auto;
+}

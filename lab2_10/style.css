@@ -12,6 +12,7 @@ body{
 .data{
     max-width: 50%;
     border: 1px solid #000;
+    padding: 20px;
 }
 .title{
     text-align: center;
