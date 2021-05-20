@@ -20,8 +20,13 @@ svg{
     display: flex;
 }
 
-button{
+.button{
     width: 50px;
     height: 20px;
     margin-top: auto;
+}
+
+.shine{
+    display: none;
+    stroke: #f5ea56;
 }

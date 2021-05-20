@@ -26,16 +26,36 @@
         </g>
       </svg>
 
+      <svg viewBox="0 0 100 100">
+        <g id="house" stroke="#000" stroke-width="3" fill="#fff">
+            <polygon points="60,10 60,-10 70,-10 70,20"/>
+            <polygon points="15,25 50,0 85,25 75,25 75,75 65,75 65,50 50,50 50,75 25,75 25,25"/>
+        </g>
+      </svg>
+
       <div class="lamp">
         <svg viewBox="0 0 80 80">
-          <g stroke="#000" stroke-width="3">
-            <polygon points="20,0 50,0 65,50 5,50" />
+          <g stroke="#000" stroke-width="3" id="Lamp">
+            <polygon points="20,0 50,0 65,50 5,50" class="lamp-up" />
+            <g class="shine">
+              <line x1="10" x2="20" y1="70" y2="55" />
+              <line x1="20" x2="30" y1="70" y2="55" />
+              <line x1="40" x2="50" y1="55" y2="70" />
+              <line x1="50" x2="60" y1="55" y2="70" />
+            </g>
+            <path
+              d="M35 90 C 50 60 70 90 100 90"
+              fill="#fff"
+              stroke="#777777"
+            />
             <line x1="35" x2="35" y1="50" y2="90" />
             <line x1="20" x2="50" y1="90" y2="90" />
           </g>
         </svg>
-        <button></button>
+        <button class="button"></button>
       </div>
     </main>
+
+    <script src="/main.js"></script>
   </body>
 </html>
