@@ -30,3 +30,21 @@ svg{
     display: none;
     stroke: #f5ea56;
 }
+
+
+.hand-seconds{
+    transform-origin: 50px 40px;
+    animation: rotate 60s infinite steps(60);
+}
+
+.hand-minute{
+    transform-origin: 50px 40px;
+    animation: rotate 3600s infinite steps(60);
+}
+
+
+@keyframes rotate {
+    100%{
+        transform: rotate(360deg);
+    }
+}

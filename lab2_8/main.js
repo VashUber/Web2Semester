@@ -1,7 +1,7 @@
 let shine = document.querySelector('.shine')
-let but = document.querySelector('.button')
-let lamp = document.querySelector('.lamp-up')
-let count = 0
+    but = document.querySelector('.button')
+    lamp = document.querySelector('.lamp-up')
+    count = 0
 
 but.onclick = () =>{
     if (count % 2 == 0){
