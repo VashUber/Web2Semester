@@ -6,48 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" media="print" href="/print.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <title>Сизов 6 лаб</title>
+    <title>Сизов 7 лаб</title>
 </head>
 
 <body>
+    <a href="#main" class="skip-link" tabindex="1">Skip to Content</a>
     <header class="header">
         <div class="header__logo">
-            <span><img src="/logo.png" alt="" class="logo"></span>
+            <span><img src="/logo.png" alt="logo" class="logo"></span>
         </div>
-        <div class="navigation header__navigation">
-            <a href="https://github.com/VashUber/lab2_6" class="navigation__link link">GitHub</a>
-            <a href="" class="navigation__link link">Lorem</a>
-            <a href="" class="navigation__link link">Lorem</a>
-            <a href="" class="navigation__link link">Lorem</a>
-        </div>
+        <navigation class="navigation header__navigation">
+            <a href="https://github.com/VashUber/lab2_6" class="navigation__link link" tabindex="2">GitHub</a>
+            <a href="" class="navigation__link link" tabindex="3">Lorem</a>
+            <a href="" class="navigation__link link" tabindex="4">Lorem</a>
+            <a href="" class="navigation__link link" tabindex="5">Lorem</a>
+            <span href="#" class="link bolder-version" tabindex="6">B</span>
+        </navigation>
     </header>
-    <main class="main">
+    <main class="main" id="main">
         <section class="hello">
             <div class="title hello__title">
-                <h2 class="title__text">Welcome to my Portfolio 👋</h2>
+                <h2 class="title__text" tabindex="7">Welcome to my Portfolio 👋</h2>
             </div>
             <div class="text hello__text">
-                <p class="text__item">
+                <p class="text__item" tabindex="8">
                     I’m Mete. I’m 24-year-old. I’m a Digital Product Designer who prioritizes simplicity and usability.
                     Currently, I'm Digital Product Designer on Norma. Formerly Enrich Mobile, ASDC, TalentMondo, and
                     MobileUpp. I love working on side projects, trying to improve myself on SwiftUI and Webflow.
                 </p>
-                <a href="https://github.com/VashUber" class="hello__link link">Contact Me</a>
+                <a href="https://github.com/VashUber" class="hello__link link" tabindex="9">Contact Me</a>
             </div>
         </section>
         <section class="cards">
             <div class="cards__block">
                 <div class="card">
-                    <img class="cards__item" src="/img/1.png" alt="">
+                    <img class="cards__item" src="/img/1.png" alt="Businesswise">
                     <div class="text">
                         <p class="micro-title">
                             Businesswise
                         </p>
                         <div class="text cards__text">
-                            <p class="text__item">
+                            <p class="text__item" tabindex="10">
                                 Businesswise freelance was a project where I worked as a designer. The main goal of
                                 businesswise is to gather podcasts in various categories for professional people.
                             </p>
@@ -55,31 +56,31 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img class="cards__item" src="/img/2.png" alt="">
+                    <img class="cards__item" src="/img/2.png" alt="Simple Scanner">
                     <p class="micro-title">
                         Simple Scanner
                     </p>
                     <div class="text">
-                        <p class="text__item cards__text">
+                        <p class="text__item cards__text" tabindex="11">
                             Simple Scanner is an application that we developed when I was working at Enrich mobile. With
                             Simple scanner, you can scan your documents and convert them to PDF.
                         </p>
                     </div>
                 </div>
                 <div class="card">
-                    <img class="cards__item" src="/img/3.png" alt="">
+                    <img class="cards__item" src="/img/3.png" alt="Musix">
                     <p class="micro-title">
                         Musix
                     </p>
                     <div class="text">
-                        <p class="text__item cards__text">
+                        <p class="text__item cards__text" tabindex="12">
                             Musix is a side project I prepared in my spare time. Spotify and Apple Music competitors.
                             The biggest advantage compared to its competitors is that it provides higher sound quality.
                         </p>
                     </div>
                 </div>
             </div>
-        </section>
+        </section>  
         <section class="concept">
             <div class="title">
                 <h2 class="title__text">Some concept works</h2>
@@ -113,6 +114,9 @@
             <p class="made-by__item">Made ❤️ by VashUber</p>
         </div>
     </footer>
+
+    <script src="index.js"></script>
+
 </body>
 
 </html>
