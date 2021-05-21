@@ -74,3 +74,8 @@ svg{
 .menu-active .line-two{
     display: none;
 }
+
+#Sun:hover{
+    transition: 0.5s;
+    stroke: #6a80ff;
+}
