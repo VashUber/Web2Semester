@@ -12,11 +12,7 @@ svg{
     stroke:  #cacaca;
 }
 
-.BurgerMenu:active{
-    stroke: red;
-}
-
-.lamp{
+.lamp-wrapper{
     display: flex;
 }
 
@@ -47,4 +43,34 @@ svg{
     100%{
         transform: rotate(360deg);
     }
+}
+
+.lamp-active .lamp-up{
+    fill: #f5ea56;
+}
+
+.lamp-active .shine{
+    display: unset;
+}
+
+.serch-home{
+    width: 250px;
+}
+
+.line-one, .line-three{
+    transition: .5s;
+}
+
+.menu-active .line-one{
+    transform-origin: 15px 25px;
+    transform: rotate(27deg) scaleX(1.15);
+}
+
+.menu-active .line-three{
+    transform-origin: 15px 45px;
+    transform: rotate(-27deg) scaleX(1.15);
+}
+
+.menu-active .line-two{
+    display: none;
 }
