@@ -1,4 +1,42 @@
 @import 'null.scss';
 
+body{
+    font-family: 'Heebo', sans-serif;
+    font-size: 18px;
+}
 
+.h1{
+    display: none;
+}
+
+.navigation{
+    display: flex;
+    justify-content: flex-end;
+    background: #000;
+    height: 40px;
+    align-items: center;
+}
+.navigation__link{
+    color: #fff;     
+    margin-right: 20px;
+    &:hover{
+        text-decoration: underline;
+    }
+    &:focus{
+        font-weight: 900;
+    }
+}
+
+.nesting-wrapper{
+    margin: 25px 0 0 20px;
+    >p{
+        text-transform: uppercase;
+    }
+    .second-level{
+        margin-left: 25px;
+        p + p{
+            color: #ff0000;
+        }
+    }
+}
 
