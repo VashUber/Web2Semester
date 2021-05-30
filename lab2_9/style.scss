@@ -1,8 +1,31 @@
 @import 'null.scss';
 
+@use "cr" as white-text;
+
+$font-size: 18px;
+
+@mixin test($a, $b, $c, $d){
+    color: $a;
+    font-weight: $b;
+    border: $c;   
+    max-width: $d;
+}
+
+%light{
+    border: 2px solid #000;
+    border-radius: 30/60 * 100%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    color: green;
+}
+
 body{
     font-family: 'Heebo', sans-serif;
-    font-size: 18px;
+    font-size: $font-size;
 }
 
 .h1{
@@ -40,3 +63,36 @@ body{
     }
 }
 
+.mixin-wrapper{
+    margin: 20px;
+    p{
+        margin-top: 20px;
+        text-align: center
+    }
+    .item1{
+        @include test(#00d9ff, bolder, dotted 4px #000, 120px * 2);
+    }
+    .item2{
+        @include test(#8c00ff, unset, solid 2px #000, 120px);    
+    }
+}
+
+.extend-wrapper{
+    margin-left: 20px;
+    p{
+        @extend %light;
+    }
+    .yellow{
+        color: yellow;
+    }
+    .red{
+        color: red;
+    }
+}
+
+.use-wrapper{
+    margin-left: 20px;
+    p{
+        @include white-text.color-white;
+    }
+}
