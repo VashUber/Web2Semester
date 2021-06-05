@@ -1,0 +1,15 @@
+.logo__img{
+    width: 70px;
+}
+.header{
+    background: #5d90fc;  
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 80px 5px 80px;
+    color: #fff;
+    box-shadow: -1px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+h1{
+    font-size: 2em;
+}
