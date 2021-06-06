@@ -6,7 +6,9 @@
         <div class="title">
             <h1>Kanban</h1>
         </div>
-        <div class="dark-mode">123</div>
+        <div class="dark-mode">
+            <p>Темная тема</p>
+        </div>
     </header>
 </template>
 
