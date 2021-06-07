@@ -11,6 +11,17 @@ export default({
 })
 </script>
 
-<style src='./footer.css'>
+<style scoped>
+    .footer{
+    background: #b6f0ff;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }   
 
+    .link{
+        color: #5d90fc;
+        text-decoration: none;
+    }
 </style>

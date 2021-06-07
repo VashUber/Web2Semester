@@ -11,6 +11,8 @@ export default({
 </script>
 
 
-<style src='./main.css'>
-
+<style scoped>
+    main{
+        min-height: calc(100vh - 200px);
+    }   
 </style>
