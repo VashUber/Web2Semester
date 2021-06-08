@@ -1,6 +1,15 @@
+@use "cr" as cr;
+@use 'sass:map';
+@use 'sass:color';
 @import 'null.scss';
 
-@use "cr" as white-text;
+
+$new-color: color.adjust(#006079, $lightness: 40%, $alpha: -0.2%);
+
+$font-weight: ('regular': 400, 'medium': 500, 'bold': 800);
+
+$black: #000;
+
 
 $font-size: 18px;
 
@@ -92,7 +101,45 @@ body{
 
 .use-wrapper{
     margin-left: 20px;
+    .first{
+        @include cr.color-white()
+    }
+    .second{
+        @include cr.color-black(#adebff, 250px, 20px)
+    }
+}
+
+.color-wrapper{
+    max-width: 350px;
+    margin-left: 20px;
+    p{  
+        margin-left: 20px;
+        color: $new-color;
+    }
+}
+
+.map-wrapper{
+    max-width: 350px;
+    margin-left: 20px;
     p{
-        @include white-text.color-white;
+        font-weight: map.get($font-weight, 'medium');    
+    }
+    .bold{
+        font-weight: map.get($font-weight, 'bold');
+    } 
+}
+
+.footer{
+    margin-top: 25px;
+    height: 50px;
+    background: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{
+        color: #fff;
+        &:hover{
+            text-decoration: underline;
+        }
     }
 }

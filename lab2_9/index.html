@@ -1,49 +1,70 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo&display=swap"
+      rel="stylesheet"
+    />
+    <title>SASS/SCSS</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
-  <title>SASS/SCSS</title>
-</head>
-
-<body>
-  <header class="header">
-    <h1 class='h1'>SASS/SCSS</h1>
-    <nav class="navigation">
-      <a href="" class="navigation__link">Lorem</a>
-      <a href="" class="navigation__link">Lorem</a>
-      <a href=""class="navigation__link">Lorem</a>
-      <a href="" class="navigation__link">Lorem</a>
-    </nav>
-  </header>
-  <main>
-    <div class="nesting-wrapper">
-      <p>Первый уровень</p>
-      <div class="second-level">
-        <p>Второй уровень</p>
-        <p>Второй уровень</p>
+  <body>
+    <header class="header">
+      <h1 class="h1">SASS/SCSS</h1>
+      <nav class="navigation">
+        <a href="" class="navigation__link">Lorem</a>
+        <a href="" class="navigation__link">Lorem</a>
+        <a href="" class="navigation__link">Lorem</a>
+        <a href="" class="navigation__link">Lorem</a>
+      </nav>
+    </header>
+    <main>
+      <div class="nesting-wrapper">
+        <p>Первый уровень</p>
+        <div class="second-level">
+          <p>Второй уровень</p>
+          <p>Второй уровень</p>
+          <p>Второй уровень</p>
+          <p>Второй уровень</p>
+        </div>
       </div>
-    </div>
-    <div class="mixin-wrapper">
-      <p class="item1">Mixin item 1</p>
-      <p class="item2">Mixin item 2</p>
-    </div>
-    <div class="extend-wrapper">
-      <p>Green</p>
-      <p class="yellow">Yellow</p>
-      <p class="red">Red</p>  
-    </div>
-    <div class="use-wrapper">
-      <h2>Mixin from another scss</h2>
-      <p class="first">First</p>
-      <p class="second">Second</p>
-    </div>
-  </main>
-</body>
-
+      <div class="mixin-wrapper">
+        <p class="item1">Mixin item 1</p>
+        <p class="item2">Mixin item 2</p>
+      </div>
+      <div class="extend-wrapper">
+        <p>Green</p>
+        <p class="yellow">Yellow</p>
+        <p class="red">Red</p>
+      </div>
+      <div class="use-wrapper">
+        <h2>Mixin from another scss</h2>
+        <p class="first">First</p>
+        <p class="second">Second</p>
+      </div>
+      <div class="map-wrapper">
+        <h2>Map SASS</h2>
+        <p class="bold">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, dicta.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, dicta.
+        </p>
+      </div>
+      <div class="color-wrapper">
+        <h2>Color SASS</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, dicta.
+        </p>
+      </div>
+    </main>
+    <footer class="footer">
+      <a href="https://github.com/VashUber">VashUber</a>
+    </footer>
+  </body>
 </html>

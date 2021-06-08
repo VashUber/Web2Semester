@@ -1,5 +1,14 @@
+$white: white;
 
-@mixin color-white{
+@mixin color-white(){
     color: #fff;
     background: #000;
+    width: 200px;
+}
+
+@mixin color-black($a, $b, $c){
+    color: #000;
+    background: $a;
+    width: $b;
+    font-size: $c;
 }
