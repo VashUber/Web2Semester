@@ -9,6 +9,8 @@ $new-color: color.adjust(#006079, $lightness: 40%, $alpha: -0.2%);
 $font-weight: ('regular': 400, 'medium': 500, 'bold': 800);
 
 $black: #000;
+$red: red;
+$yellow: yellow;
 
 
 $font-size: 18px;
@@ -92,10 +94,10 @@ body{
         @extend %light;
     }
     .yellow{
-        color: yellow;
+        color: $yellow;
     }
     .red{
-        color: red;
+        color: $red;
     }
 }
 
@@ -121,7 +123,8 @@ body{
 .map-wrapper{
     max-width: 350px;
     margin-left: 20px;
-    p{
+    p{  
+        margin-left: 20px;
         font-weight: map.get($font-weight, 'medium');    
     }
     .bold{
