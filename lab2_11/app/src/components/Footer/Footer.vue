@@ -11,8 +11,9 @@ export default({
 })
 </script>
 
-<style scoped>
+<style>
     .footer{
+        transition: 1s;
         background: #e7faff;
         height: 60px;
         display: flex;
@@ -21,6 +22,7 @@ export default({
     }   
 
     .link{
+        transition: 1s;
         color: #5d90fc;
         text-decoration: none;
     }

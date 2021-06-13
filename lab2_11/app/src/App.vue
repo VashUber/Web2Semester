@@ -1,7 +1,9 @@
 <template>
-  <Header />
-  <Main />
-  <Footer />
+  <div class="body" :class="{ dark: mode }">
+    <Header  @current_mode="current_mode"/>
+    <Main />
+    <Footer />   
+  </div>
 </template>
 
 <script>
@@ -11,11 +13,21 @@ import Main from './components/Main/Main'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      mode: ''
+    }
+  },
+  methods: {
+    current_mode(dataValue){
+      this.mode = dataValue
+    }
+  },
   components: {
     Header,
     Main,
     Footer
-  }
+  },
 }
 </script>
 
@@ -24,11 +36,44 @@ export default {
     margin: 0;
     padding: 0;
   }
-  #app{
+  .body{
     max-width: 2560px;
     overflow-x: hidden;
     margin: 0 auto;
     font-size: 1em;
     font-family: 'Poppins', sans-serif;
   }
+
+  .body.dark .header{
+    transition: 1s;
+    background: #111c35;
+    color: #dce3ff;
+  }
+
+  .body.dark .main{
+    transition: 1s;
+    background: #1d2f5a;
+  }
+
+  .body.dark .footer{
+    transition: 1s;
+    background: #111c35;  
+  }
+
+  .body.dark .footer .link{
+    transition: 1s;
+    color: #dce3ff;  
+  }
+  
+  .body.dark .main .block{
+    transition: 1s;
+    background: #4c5d8a;
+  }
+
+  .body.dark .main .button{
+    transition: 1s;
+    background: #111c35; 
+    color: #dce3ff;
+  }
+
 </style>

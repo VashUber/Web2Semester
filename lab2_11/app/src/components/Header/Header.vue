@@ -7,25 +7,40 @@
             <h1>Kanban</h1>
         </div>
         <div class="dark-mode">
-            <p>Темная тема</p>
+            <Darkmode @current_mode="current_mode"/>
         </div>
     </header>
 </template>
 
 <script>
-
+import Darkmode from './Darkmode'
 export default({
-    name: 'Header'    
+    name: 'Header',
+    data() {
+        return {
+            mode: ''
+        }
+    },
+    methods: {
+        current_mode: function (dataValue) {
+            this.mode = dataValue
+            this.$emit('current_mode', this.mode)
+        }    
+    },
+    components: {
+        Darkmode
+    }
 })
 </script>
 
 
-<style scoped>
+<style >
     .logo__img{
         width: 75px;
     }
 
     .header{
+        transition: 1s;
         background: #5d90fc;  
         display: flex;  
         justify-content: space-between;
@@ -42,5 +57,6 @@ export default({
     .title{
         border-bottom: 2px solid #fff;
     }
+    
 
 </style>
