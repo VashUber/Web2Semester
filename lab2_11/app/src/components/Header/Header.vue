@@ -22,7 +22,7 @@ export default({
 
 <style scoped>
     .logo__img{
-    width: 75px;
+        width: 75px;
     }
 
     .header{
@@ -33,7 +33,7 @@ export default({
         padding: 5px 80px 5px 80px;
         color: #fff;
         box-shadow: 0px 3px 19px -4px rgba(34, 60, 80, 0.2);
-        margin-bottom: 70px;
+        height: 70px;
     }
     h1{
         font-size: 2em;

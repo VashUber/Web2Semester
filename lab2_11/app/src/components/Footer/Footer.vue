@@ -13,11 +13,11 @@ export default({
 
 <style scoped>
     .footer{
-    background: #b6f0ff;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        background: #e7faff;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }   
 
     .link{

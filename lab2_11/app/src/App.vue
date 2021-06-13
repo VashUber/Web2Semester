@@ -25,7 +25,7 @@ export default {
     padding: 0;
   }
   #app{
-    max-width: 1920px;
+    max-width: 2560px;
     overflow-x: hidden;
     margin: 0 auto;
     font-size: 1em;
