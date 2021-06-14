@@ -6,6 +6,14 @@
       @Close="CloseModal"
       @GetData="GetData"
     />
+
+    <ModalEdit 
+        class="modal" 
+        v-if="isEdit" 
+        @CloseEdit="CloseEdit" 
+        @Edit='EditCard'
+        :data = this.dataProp
+    />
     <button class="button" @click="ShowModal()">Создать задачу</button>
     <div class="blocks">
       <div class="block" id="1">
@@ -15,6 +23,7 @@
           :key="item.id"
           class="card"
           v-show="item.id == 1"
+          
         >
           <div class="card-header">
             <h2>Задача № {{ item.number }}</h2>
@@ -63,7 +72,16 @@
         >
           <div class="card-header">
             <h2>Задача № {{ item.number }}</h2>
-            <p class="priority" :class="{ first: ig }">{{ item.priority }}</p>
+            <p
+              class="priority"
+              :class="{
+                first: item.priority == '1',
+                second: item.priority == '2',
+                third: item.priority == '3',
+              }"
+            >
+              {{ item.priority }}
+            </p>
           </div>
           <div class="card-content">
             <p class="text">
@@ -96,7 +114,16 @@
         >
           <div class="card-header">
             <h2>Задача № {{ item.number }}</h2>
-            <p class="priority">{{ item.priority }}</p>
+            <p
+              class="priority"
+              :class="{
+                first: item.priority == '1',
+                second: item.priority == '2',
+                third: item.priority == '3',
+              }"
+            >
+              {{ item.priority }}
+            </p>
           </div>
           <div class="card-content">
             <p class="text">
@@ -125,11 +152,13 @@
 
 <script>
 import Modal from "../Modal/Modal";
+import ModalEdit from "../Modal/ModalEdit";
 
 export default {
   name: "Main",
   components: {
     Modal,
+    ModalEdit,
   },
   data() {
     return {
@@ -141,6 +170,8 @@ export default {
       date: "",
       current_id: "",
       id: 1,
+      isEdit: false,
+      dataProp: ''
     };
   },
   methods: {
@@ -148,9 +179,16 @@ export default {
       return (this.isVisible = !this.isVisible);
     },
     Edit(data) {
-      this.ShowModal();
-      console.log(this.description);
-      console.log(data);
+      this.CloseEdit();
+      return this.dataProp = data
+    },
+    CloseEdit() {
+      this.isEdit = !this.isEdit;
+    },
+    EditCard(data){
+        this.object = this.tasks.find((elem) => elem.number === data[2]);
+        this.object.description = data[0]
+        this.object.priority = data[1]
     },
     CloseModal() {
       return (this.isVisible = !this.isVisible);
