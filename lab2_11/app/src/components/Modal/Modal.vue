@@ -39,9 +39,11 @@ export default {
         },
         GetData(){
             let data = [this.description, this.priority]
-            this.$emit('GetData', data)
-            this.description = ''
-            this.priority = ''
+            if (this.description != '' && this.priority != ''){
+                this.$emit('GetData', data)
+                this.description = ''
+                this.priority = ''
+            }
         }
     },
 
