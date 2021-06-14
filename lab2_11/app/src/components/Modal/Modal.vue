@@ -61,7 +61,6 @@ export default {
         color: #4974d1;
         font-weight: bold;
         border-radius: 100%;
-        transition: .5s;
     }
 
     .close:hover{
