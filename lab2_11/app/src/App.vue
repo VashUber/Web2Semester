@@ -80,4 +80,13 @@ export default {
     border-bottom: 3px solid #dce3ff;
   }
 
+  .body.dark .card{
+    transition: 1s;
+    background: #dce3ff;;
+  }
+
+  .body.dark .modal-wrapper{
+    background: #dce3ff;
+  }
+
 </style>

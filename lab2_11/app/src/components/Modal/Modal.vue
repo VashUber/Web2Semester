@@ -8,7 +8,7 @@
         </div>    
         <div class="content-modal">
             <div class="form">
-                <form action="#" @submit="GetData">
+                <form action="#" @submit.prevent="GetData">
                     <label for="">Описание</label>
                     <input type="text" v-model="description">
                     <label for="">Приоритет</label>
@@ -61,6 +61,12 @@ export default {
         color: #4974d1;
         font-weight: bold;
         border-radius: 100%;
+        transition: .5s;
+    }
+
+    .close:hover{
+        transition: .5s;
+        background: #658de4;
     }
     
     .modal-wrapper{

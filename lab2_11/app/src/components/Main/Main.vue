@@ -12,11 +12,12 @@
     >
     Создать задачу</button>
     <div class="blocks">
-        <div class="block" id='1' >
+        <div class="block" id='1'>
             <div 
                 v-for="item in tasks"
-                :key="item.priority"
+                :key="item.id"
                 class='card'
+                v-show="item.id == 1"
             >
                 <div class="card-header">
                     <h2>Задача № {{ item.number }} </h2>
@@ -31,18 +32,82 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <button class="card-footer__button">←</button>
+                    <button 
+                        class="card-footer__button"
+                        @click='previousStep(item)'
+                    >←</button>
                     <button class="card-footer__button">edit</button>
-                    <button class="card-footer__button">→</button>
+                    <button 
+                        class="card-footer__button"
+                        @click='nextStep(item)'
+                    >→</button>
                 </div>
-
             </div>
         </div>
         <div class="block" id='2'>
+            <div 
+                v-for="item in tasks"
+                :key="item.id"
+                class='card'
+                v-show="item.id == 2"
+            >
+                <div class="card-header">
+                    <h2>Задача № {{ item.number }} </h2>
+                    <p class="priority" :class=" { аа : аа} " > {{ item.priority }} </p>
+                </div>
+                <div class="card-content">
+                    <p class="text">
+                        {{ item.description }}
+                    </p>
+                    <p class="date">
+                        {{ item.date }}
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <button 
+                        class="card-footer__button"
+                        @click='previousStep(item)'
+                    >←</button>
+                    <button class="card-footer__button">edit</button>
+                    <button 
+                        class="card-footer__button"
+                        @click='nextStep(item)'
+                    >→</button>
+                </div>
+            </div>   
 
         </div>
         <div class="block" id='3'>
-
+            <div 
+                v-for="item in tasks"
+                :key="item.id"
+                class='card'
+                v-show="item.id == 3"
+            >
+                <div class="card-header">
+                    <h2>Задача № {{ item.number }} </h2>
+                    <p class="priority" :class=" { аа : аа} " > {{ item.priority }} </p>
+                </div>
+                <div class="card-content">
+                    <p class="text">
+                        {{ item.description }}
+                    </p>
+                    <p class="date">
+                        {{ item.date }}
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <button 
+                        class="card-footer__button"
+                        @click='previousStep(item)'
+                    >←</button>
+                    <button class="card-footer__button">edit</button>
+                    <button 
+                        class="card-footer__button"
+                        @click='nextStep(item)'
+                    >→</button>
+                </div>
+            </div>
         </div>
     </div>
   </main>
@@ -64,7 +129,9 @@ export default {
           description: '',
           priority: '',
           number: 0,
-          date: ''
+          date: '',
+          current_id: '',
+          id: 1
       }
   },
   methods: {
@@ -81,11 +148,11 @@ export default {
           const NewCard = {
                 'description':data[0],
                 'priority':data[1],
-                'number': this.number.toString(),
-                'date': this.date.toString()
+                'number': this.number,
+                'date': this.date.toString(),
+                'id': this.id
           }
           this.tasks.push(NewCard)
-          console.log(this.tasks)
       },
       formatDate(date) {
 			const monthNames = [
@@ -103,7 +170,18 @@ export default {
 
 			// example: 16:09 14 June 2021
 			return `${ h }:${ m } ${ day } ${ monthNames[monthIndex] } ${ year }`;
-		}
+		},
+        nextStep(item){
+            this.object = this.tasks.find(elem => elem.number === item.number)
+            
+            if (this.object.id < 3) this.object.id += 1
+            else this.tasks.splice(this.object)
+            
+        },
+        previousStep(item){
+            this.object = this.tasks.find(elem => elem.number === item.number)
+             if (this.object.id <= 3 && this.object.id > 1) this.object.id -= 1
+        }
   },
 };
 
@@ -123,7 +201,7 @@ export default {
     }
     .block {
         transition: 1s;
-        min-height: 415px;
+        min-height: 395px;
         height: auto;
         width: 30%;
         max-width: 320px;
@@ -165,6 +243,7 @@ export default {
         border: 2px solid #4974d1;
         border-radius: 8px;
         margin-bottom: 20px;
+        transition: 1s;
     }
 
     .text{
@@ -205,5 +284,10 @@ export default {
         border-radius: 10px;
         background: #bad0ff;
     }
+
+    .card-footer .card-footer__button:hover{
+        background: #91aff0;
+    }
+
     
 </style>
