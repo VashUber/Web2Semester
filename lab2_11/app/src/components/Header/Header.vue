@@ -35,6 +35,10 @@ export default({
 
 
 <style >
+    .logo, .title, .dark-mode{
+        max-width: 320px;
+        width: 30%;
+    }
     .logo__img{
         width: 75px;
     }
@@ -45,7 +49,7 @@ export default({
         display: flex;  
         justify-content: space-between;
         align-items: center;
-        padding: 5px 80px 5px 80px;
+        padding: 5px 8% 5px 8%;
         color: #fff;
         box-shadow: 0px 3px 19px -4px rgba(34, 60, 80, 0.2);
         height: 70px;
@@ -54,9 +58,19 @@ export default({
         font-size: 2em;
     }
 
-    .title{
-        border-bottom: 2px solid #fff;
+    .title h1{
+        display:inline-block;
+        border-bottom: 3px solid #fff;
+        padding-bottom: 1px;
+    }   
+
+    .dark-mode{
+        display: flex;
+        justify-content: flex-end;
     }
-    
+
+    .title{
+        text-align: center;
+    }
 
 </style>

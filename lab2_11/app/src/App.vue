@@ -76,4 +76,8 @@ export default {
     color: #dce3ff;
   }
 
+  .body.dark .title h1{
+    border-bottom: 3px solid #dce3ff;
+  }
+
 </style>
