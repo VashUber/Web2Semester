@@ -164,7 +164,7 @@
               edit
             </button>
             <button class="card-footer__button" @click="nextStep(item)">
-              →
+              X
             </button>
           </div>
         </div>
@@ -210,7 +210,6 @@ export default {
       const itemId = event.dataTransfer.getData("number");
       const item = this.tasks.find((item) => item.number == itemId);
       item.id = id;
-      console.log(item)
     },
 
     Edit(data) {
@@ -272,8 +271,6 @@ export default {
     nextStep(item) {
       this.object = this.tasks.find((elem) => elem.number === item.number);
       this.index = this.tasks.findIndex((elem) => elem.number === item.number)
-      console.log(this.index)
-      console.log(this.object);
       if (this.object.id < 3) this.object.id += 1;
       else this.tasks.splice(this.index , 1);
     },
