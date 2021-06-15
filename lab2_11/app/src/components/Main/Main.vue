@@ -7,23 +7,30 @@
       @GetData="GetData"
     />
 
-    <ModalEdit 
-        class="modal" 
-        v-if="isEdit" 
-        @CloseEdit="CloseEdit" 
-        @Edit='EditCard'
-        :data = this.dataProp
+    <ModalEdit
+      class="modal"
+      v-if="isEdit"
+      @CloseEdit="CloseEdit"
+      @Edit="EditCard"
+      :data="this.dataProp"
     />
     <button class="button" @click="ShowModal()">Создать задачу</button>
     <div class="blocks">
-      <div class="block" id="1">
+      <div
+        class="block"
+        id="1"
+        @drop="onDrop($event, 1)"
+        @dragenter.prevent
+        @dragover.prevent
+      >
         <h2>План</h2>
         <div
           v-for="item in tasks"
           :key="item.id"
           class="card"
           v-show="item.id == 1"
-          
+          @dragstart="onDragStart($event, item)"
+          draggable="true"
         >
           <div class="card-header">
             <h2>Задача № {{ item.number }}</h2>
@@ -62,13 +69,21 @@
           </div>
         </div>
       </div>
-      <div class="block" id="2">
+      <div
+        class="block"
+        id="2"
+        @drop="onDrop($event, 2)"
+        @dragenter.prevent
+        @dragover.prevent
+      >
         <h2>В работе</h2>
         <div
           v-for="item in tasks"
           :key="item.id"
           class="card"
           v-show="item.id == 2"
+          @dragstart="onDragStart($event, item)"
+          draggable="true"
         >
           <div class="card-header">
             <h2>Задача № {{ item.number }}</h2>
@@ -104,13 +119,21 @@
           </div>
         </div>
       </div>
-      <div class="block" id="3">
+      <div
+        class="block"
+        id="3"
+        @drop="onDrop($event, 3)"
+        @dragenter.prevent
+        @dragover.prevent
+      >
         <h2>Готово</h2>
         <div
           v-for="item in tasks"
           :key="item.id"
           class="card"
           v-show="item.id == 3"
+          @dragstart="onDragStart($event, item)"
+          draggable="true"
         >
           <div class="card-header">
             <h2>Задача № {{ item.number }}</h2>
@@ -150,7 +173,7 @@
   </main>
 </template>
 
-<script>
+<script >
 import Modal from "../Modal/Modal";
 import ModalEdit from "../Modal/ModalEdit";
 
@@ -171,24 +194,36 @@ export default {
       current_id: "",
       id: 1,
       isEdit: false,
-      dataProp: ''
+      dataProp: "",
     };
   },
   methods: {
     ShowModal() {
       return (this.isVisible = !this.isVisible);
     },
+    onDragStart(event, item) {
+      event.dataTransfer.dropEffect = "move";
+      event.dataTransfer.effectAllowed = "move";
+      event.dataTransfer.setData("number", item.number);
+    },
+    onDrop(event, id) {
+      const itemId = event.dataTransfer.getData("number");
+      const item = this.tasks.find((item) => item.number == itemId);
+      item.id = id;
+      console.log(item)
+    },
+
     Edit(data) {
       this.CloseEdit();
-      return this.dataProp = data
+      return (this.dataProp = data);
     },
     CloseEdit() {
       this.isEdit = !this.isEdit;
     },
-    EditCard(data){
-        this.object = this.tasks.find((elem) => elem.number === data[2]);
-        this.object.description = data[0]
-        this.object.priority = data[1]
+    EditCard(data) {
+      this.object = this.tasks.find((elem) => elem.number === data[2]);
+      this.object.description = data[0];
+      this.object.priority = data[1];
     },
     CloseModal() {
       return (this.isVisible = !this.isVisible);
@@ -234,9 +269,11 @@ export default {
     },
     nextStep(item) {
       this.object = this.tasks.find((elem) => elem.number === item.number);
+      this.index = this.tasks.findIndex((elem) => elem.number === item.number)
+      console.log(this.index)
       console.log(this.object);
       if (this.object.id < 3) this.object.id += 1;
-      else this.tasks.splice(this.object, 1);
+      else this.tasks.splice(this.index , 1);
     },
     previousStep(item) {
       this.object = this.tasks.find((elem) => elem.number === item.number);
