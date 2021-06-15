@@ -23,7 +23,7 @@
         @dragenter.prevent
         @dragover.prevent
       >
-        <h2>План</h2>
+        <h2>План {{ tasks.filter(elem => elem.id == 1).length }} </h2>
         <div
           v-for="item in tasks"
           :key="item.id"
@@ -76,7 +76,7 @@
         @dragenter.prevent
         @dragover.prevent
       >
-        <h2>В работе</h2>
+        <h2>В работе {{ tasks.filter(elem => elem.id == 2).length }}</h2>
         <div
           v-for="item in tasks"
           :key="item.id"
@@ -126,7 +126,7 @@
         @dragenter.prevent
         @dragover.prevent
       >
-        <h2>Готово</h2>
+        <h2>Готово {{ tasks.filter(elem => elem.id == 3).length }}</h2>
         <div
           v-for="item in tasks"
           :key="item.id"
@@ -224,6 +224,7 @@ export default {
       this.object = this.tasks.find((elem) => elem.number === data[2]);
       this.object.description = data[0];
       this.object.priority = data[1];
+      this.CloseEdit()
     },
     CloseModal() {
       return (this.isVisible = !this.isVisible);
@@ -240,6 +241,7 @@ export default {
         id: this.id,
       };
       this.tasks.push(NewCard);
+      this.CloseModal();
     },
     formatDate(date) {
       const monthNames = [
